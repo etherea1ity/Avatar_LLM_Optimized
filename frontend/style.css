@@ -62,7 +62,8 @@ label {
 }
 
 select,
-textarea {
+textarea,
+input[type="text"] {
   width: 100%;
   border-radius: 12px;
   border: 1px solid var(--border);
@@ -74,10 +75,26 @@ textarea {
 }
 
 select:focus,
-textarea:focus {
+textarea:focus,
+input[type="text"]:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.15);
+}
+
+.dataset-summary {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  color: #cbd5f5;
+  min-height: 1.2rem;
+}
+
+.field-group {
+  margin-top: 12px;
+}
+
+.hidden {
+  display: none;
 }
 
 button {
@@ -177,6 +194,13 @@ button:disabled {
 
 .trace-step p {
   margin: 0;
+  white-space: pre-wrap;
+}
+
+.trace-step.action.finish .trace-note-line {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #cbd5f5;
   white-space: pre-wrap;
 }
 

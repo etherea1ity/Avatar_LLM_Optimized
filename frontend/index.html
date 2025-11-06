@@ -14,12 +14,22 @@
     </header>
 
     <section class="card">
-      <h2>Choose or Enter a Question</h2>
+      <h2>Choose Task & Question</h2>
+
+      <label for="datasetSelect">Dataset</label>
+      <select id="datasetSelect"></select>
+      <p id="datasetSummary" class="dataset-summary"></p>
+
       <label for="sampleSelect">Select a sample question</label>
       <select id="sampleSelect"></select>
 
       <label for="customQuestion">Or type your own</label>
-      <textarea id="customQuestion" rows="4" placeholder="Ask any multi-hop question..."></textarea>
+      <textarea id="customQuestion" rows="4" placeholder="Ask any question for the selected dataset..."></textarea>
+
+      <div id="paperIdGroup" class="field-group hidden">
+        <label for="paperIdInput">arXiv Paper ID (required for ArxivQA)</label>
+        <input id="paperIdInput" type="text" placeholder="e.g. 1706.03762" />
+      </div>
 
       <button id="runBtn">Run Agents</button>
       <p id="status" class="status"></p>
