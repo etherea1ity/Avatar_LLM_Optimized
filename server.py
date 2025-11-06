@@ -34,8 +34,8 @@ MODEL = "openai/deepseek-v3.2-exp"
 DATASET_NAME = "hotpotqa/hotpot_qa"
 DATASET_CONFIG = "distractor"
 QUESTION_CHOICES = [
-    "Are both Elko Regional Airport and Gerald R. Ford International Airport located in Michigan?",
-    "Are both Baoan Airport and Daxing Airport both located in Shenzhen?",
+    "Are both Elko Regional Airport, Detroit Metro Airport and Gerald R. Ford International Airport located in Michigan?",
+    "Are both Baoan Airport, Baiyun Airport and Daxing Airport both located in Guangdong Province?",
 ]
 RETRIEVAL_SPLIT = "train[:500]"
 BUNDLE_FILENAME = "HotpotOptimized.dill"
