@@ -10,11 +10,21 @@ This folder contains a self-contained copy of the Avatar HotpotQA demo with a Fa
 
 ## Prerequisites
 
+Install the Python dependencies (Python 3.10+ recommended):
+
 ```bash
-pip install fastapi "uvicorn[standard]" datasets dspy dill
+pip install \
+	fastapi "uvicorn[standard]" \
+	datasets dspy dill \
+	langchain langchain-community \
+	arxiv
 ```
 
-Ensure your environment variables for the DashScope-compatible endpoint stay the same as in training; `server.py` sets the key/base URL automatically from the constants at the top of the file.
+Notes:
+
+- The backend tries to instantiate LangChain's `GoogleSerperAPIWrapper` (web search) and `ArxivAPIWrapper` (paper metadata). If they fail to start—because the packages or credentials are missing—it falls back to an offline cache of the `taesiri/arxiv_qa` dataset. Installing the packages above enables the real tools.
+- To let `GoogleSerperAPIWrapper` run, export `SERPER_API_KEY` with a valid [Serper.dev](https://serper.dev) token before starting `uvicorn`.
+- The hard-coded DashScope-compatible credentials at the top of `server.py` mirror the training setup; adjust `API_KEY`, `BASE`, and `MODEL` there (or via environment variables) to match your deployment.
 
 ## Running the backend
 
