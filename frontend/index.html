@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AVATAR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>AVATAR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning</h1>
+      <p class="subtitle">Compare a single-step baseline vs. the Avatar-optimized agent on curated questions.</p>
+    </header>
+
+    <section class="card">
+      <h2>Choose or Enter a Question</h2>
+      <label for="sampleSelect">Select a sample question</label>
+      <select id="sampleSelect"></select>
+
+      <label for="customQuestion">Or type your own</label>
+      <textarea id="customQuestion" rows="4" placeholder="Ask any multi-hop question..."></textarea>
+
+      <button id="runBtn">Run Agents</button>
+      <p id="status" class="status"></p>
+    </section>
+
+    <section class="results">
+      <div class="result-card" id="baselineCard">
+        <h2>RAW LLM (Baseline)</h2>
+        <h3>Answer</h3>
+        <p id="baselineAnswer" class="answer"></p>
+        <h3>Trace</h3>
+        <div id="baselineTrace" class="trace-note"></div>
+      </div>
+
+      <div class="result-card" id="optimizedCard">
+        <h2>Avatar Optimized Agent</h2>
+        <h3>Answer</h3>
+        <p id="optimizedAnswer" class="answer"></p>
+        <h3>Trace</h3>
+        <div id="optimizedTrace" class="trace-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
